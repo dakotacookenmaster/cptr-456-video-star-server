@@ -31,7 +31,7 @@ export class AppService {
                 .map(
                     (word, index) => {
                         if (index !== 0) {
-                            if (!["in", "a", "on", "of", "is"].includes(word)) {
+                            if (!["in", "a", "for", "an", "the", "on", "of", "is"].includes(word)) {
                                 return word[0].toUpperCase() + word.substring(1)
                             } else {
                                 return word
