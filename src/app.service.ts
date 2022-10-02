@@ -5,10 +5,6 @@ import ffmpeg = require("ffmpeg")
 
 @Injectable()
 export class AppService {
-    getHello(): string {
-        return 'Hello World!'
-    }
-
     async getVideos(): Promise<Video[]> {
         let videos = []
         for(let i = 0; i < 25; i++) {
