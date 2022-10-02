@@ -9,6 +9,10 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get()
+  @ApiOkResponse({
+    type: [Video],
+    description: "An array containing all the videos in the service."
+  })
   getVideos(): Promise<Video[]> {
     return this.appService.getVideos()
   }

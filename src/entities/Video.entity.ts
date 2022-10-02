@@ -18,12 +18,12 @@ export class Video {
     name: string
 
     @ApiProperty({
-        name: "length",
+        name: "duration",
         type: "string",
-        example: "06:21",
-        description: "The length, in MM:SS notation, of the video."
+        example: "00:01:13.12",
+        description: "The duration of the video as a time-formatted string."
     })
-    length: string
+    duration: string
 
     @ApiProperty({
         name: "size",
@@ -36,7 +36,7 @@ export class Video {
     @ApiProperty({
         name: "isPurchased",
         type: "boolean",
-        example: true,
+        example: false,
         description: "Whether this video is marked as purchased or not."
     })
     isPurchased: boolean

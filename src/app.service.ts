@@ -45,7 +45,7 @@ export class AppService {
             }`
             video.isFree = video.name.length % 2 === 0
             video.isPurchased = video.isFree
-            video.length = videoAsMpeg.metadata?.duration?.raw
+            video.duration = videoAsMpeg.metadata?.duration?.raw
             video.size = (await fs.stat(fileLocation)).size
             video.price = video.isFree ? 0 : +(video.size / (1024 * 1024)).toFixed(2)
             video.url = `http://localhost:3000/videos/${fileName}`

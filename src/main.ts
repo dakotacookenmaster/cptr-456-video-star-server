@@ -10,7 +10,7 @@ async function bootstrap() {
 
   app.enableCors()
   app.use(helmet())
-  console.log(__dirname)
+
   app.useStaticAssets(join(__dirname, "..", "assets"), {
     prefix: "/videos/"
   })
@@ -18,7 +18,7 @@ async function bootstrap() {
   const config = new DocumentBuilder()
     .setTitle("VideoStar Web API")
     .setDescription("An interface to retrieve video and informational data about customer video data.")
-    .setVersion("0.0.1")
+    .setVersion("1.0.0")
     .build()
 
   const document = SwaggerModule.createDocument(app, config)
