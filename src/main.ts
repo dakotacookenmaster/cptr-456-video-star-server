@@ -8,15 +8,20 @@ import { join } from 'path'
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule)
 
+  app.enableCors({
+    origin: "*",
+  })
+
   app.use(helmet())
 
   app.useStaticAssets(join(__dirname, "..", "assets"), {
-    prefix: "/videos/"
+    prefix: "/videos/",
+    setHeaders: (res, path, stat) => {
+      res.set('Access-Control-Allow-Origin', '*');
+    }
   })
 
-  app.enableCors({
-    origin: "*"
-  })
+
 
   const config = new DocumentBuilder()
     .setTitle("VideoStar Web API")
