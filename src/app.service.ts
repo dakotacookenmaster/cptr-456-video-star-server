@@ -48,7 +48,7 @@ export class AppService {
             video.duration = videoAsMpeg.metadata?.duration?.raw
             video.size = (await fs.stat(fileLocation)).size
             video.price = video.isFree ? 0 : +(video.size / (1024 * 1024)).toFixed(2)
-            video.url = `http://videostar.dacoder.io/videos/${fileName}`
+            video.url = `https://videostar.dacoder.io/videos/${fileName}`
 
             return video
         }
